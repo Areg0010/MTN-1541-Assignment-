@@ -4,27 +4,28 @@
 
 /* Sets the page background so the stylesheet link can be confirmed on save. */
 body {
-  background-color: #dce8d4;
+  background-color: #e8d4d4f8;
 }
 
-/* Styles every paragraph with colour and line-height (two declarations). */
+/* Styles every paragraph with a text colour and line-height (two declarations). */
 p {
   color: #445566;
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
 /* Gives every h2 heading a colour. */
 h2 {
-  color: #2f5d3a;
+  color: #c05c31;
 }
 
-/* Groups two element types so the main headings share the same font. */
+/* Groups two element types so the main headings share the same font styling. */
 h1,
 h2 {
   font-family: Georgia, "Times New Roman", serif;
 }
 
 /* Styles the intro paragraph differently from the other paragraphs. */
+/* class used because multiple intro paragraphs could share this style across pages. */
 .intro {
   color: #3a5a40;
   font-size: 1.15rem;
@@ -32,11 +33,16 @@ h2 {
 }
 
 /* Styles the Summit Climb heading using its ID. */
+/* ID used because this specific heading is unique on the page. */
 #summit {
   color: #8b3a1e;
+  border-bottom: 2px solid #8b3a1e;
+  padding-bottom: 0.5rem;
 }
 
-/* Same element type and specificity as the earlier p rule — this later colour wins. */
-p {
-  color: #1c3d2a;
+
+/* Cascade conflict: same element type and specificity as the earlier h2 rule */
+/* This rule will override the earlier h2 rule because it is declared later in the stylesheet. */
+h2 {
+  color: #828976;
 }
