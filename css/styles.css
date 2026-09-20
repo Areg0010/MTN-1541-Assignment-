@@ -1,3 +1,42 @@
 /* MTM1544 Week 1: your stylesheet.
    This file is already linked from index.html. Write your rules below.
    Start by changing the body background colour and saving, to confirm the link works. */
+
+/* Sets the page background so the stylesheet link can be confirmed on save. */
+body {
+  background-color: #dce8d4;
+}
+
+/* Styles every paragraph with colour and line-height (two declarations). */
+p {
+  color: #445566;
+  line-height: 1.7;
+}
+
+/* Gives every h2 heading a colour. */
+h2 {
+  color: #2f5d3a;
+}
+
+/* Groups two element types so the main headings share the same font. */
+h1,
+h2 {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+/* Styles the intro paragraph differently from the other paragraphs. */
+.intro {
+  color: #3a5a40;
+  font-size: 1.15rem;
+  font-style: italic;
+}
+
+/* Styles the Summit Climb heading using its ID. */
+#summit {
+  color: #8b3a1e;
+}
+
+/* Same element type and specificity as the earlier p rule — this later colour wins. */
+p {
+  color: #1c3d2a;
+}
