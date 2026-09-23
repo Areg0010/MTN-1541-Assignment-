@@ -3,8 +3,15 @@
    Start by changing the body background colour and saving, to confirm the link works. */
 
 /* Sets the page background so the stylesheet link can be confirmed on save. */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
-  background-color: #e8d4d4f8;
+  background-color: #117d32f8;
 }
 
 /* Styles every paragraph with a text colour and line-height (two declarations). */
@@ -40,9 +47,37 @@ h2 {
   padding-bottom: 0.5rem;
 }
 
+/* Card Component Styles */
+.card-selection {
+  width:300px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3rem;
+  padding: 1.7rem;
+  background-color:#a2b7176b;
+  border: 1px solid #af0c11;
+  border-radius: 10px;
+}
+
+/* Margin Collapse Test Pair */
+.card-paragraph-first {
+  margin-bottom: 50px;
+}
+
+.card-paragraph-second {
+  margin-top: 20px;
+}
+
+/* Aspect-Ratio Image */
+.card-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 5px;
+}
 
 /* Cascade conflict: same element type and specificity as the earlier h2 rule */
 /* This rule will override the earlier h2 rule because it is declared later in the stylesheet. */
 h2 {
-  color: #828976;
+  color: #1630c6;
 }
