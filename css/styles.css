@@ -44,6 +44,8 @@ p {
   line-height: 1.6;
 }
 
+/* WEEK 3 ASSIGNMENT */
+
 /* Typography Baseline for Headings */
 h1, h2, h3 {
      font-family: 'Inter', system-ui, sans-serif;
@@ -158,3 +160,123 @@ contrast ratio of 13.8:1 (PASSES AAA)
   Button Text (#ffffff) on Button Hover Background (color-mix 20% black):
   contrast ratio of 7.2:1 (PASSES AAA) 
   */
+
+  /* WEEK 4 ASSIGNMENT: SPECIFICITY IN PRACTICE */
+
+  /* 1. GIVING EVERY LINK INTERACTION TO NAVIGATE THE WHOLE PAGE WITH THE TAB*/
+
+  a:hover {
+     color: var(--color-oklch-3);
+     text-decoration: underline;
+  }
+
+  a:focus {
+    outline: 3px solid #b22222;
+    outline-offset: 3px;
+    background-color: #f0f8ff;
+  }
+
+     .btn:hover {
+        color:aqua;
+        background-color:color-mix(in oklch, var(--color-oklch-3), #c05c31 20%);
+        border:6px dotted red;
+        /* width: 100%; */
+      }
+
+      .btn:focus {
+        outline:3px solid var(--color-oklch-4);
+        background-color: aquamarine;
+        outline-offset: 4px;
+      }
+
+      .btn::after {
+        content: url("https://images.unsplash.com/photo-1504006833117-8886a355efbf?w=100&auto=format&fit=crop");
+        margin-left: 0.5rem;
+        vertical-align: middle;
+      }
+
+  /* STRUCTURAL SELECTORS USING (:nth-child & first-child) */
+
+/* Using background color for odd list items (1st, 3rd, 5th, etc.) */
+  .firstlist li:nth-child(odd) {
+    background-color: var(--color-oklch-1);
+    padding:6px 10px;
+  }
+
+  /* Using background color alternatively for even list times (2nd,4th,6th etc.) */
+  .firstlist li:nth-child(even) {
+    background-color: #f0f0f0;
+    padding:6px 10px;
+  }
+
+  /* Highlight style for the very first list item */
+  .firstlist  li:first-child {
+    font-weight:bold;
+    border-left: 4px solid var(--color-oklch-3);
+  }
+
+  /* Decorative Psuedo-ELement                       
+  Justification:  
+  The decorative symbol (^) added via the ::before pseudo-element is purely visual
+  for visual enhancement. This is because the pseudo-element content generated 
+  in CSS is not to be rendered as Semantic modes in the DOM tree, rather it is safely ignored by screen readers 
+  and assistive technologies. */
+
+
+     h2::before {
+      content: "^";
+      color: var(--color-oklch-3);
+      font-size: 0.8rem;
+      margin-right: 0.25rem;
+     }
+
+      /* SPECIFICTY- USING SELECTORS 
+      targeting  the same h3 element using three different selector types:
+
+     1st (use of low priority): Element selector (h3)-speciifcity (0,0,1)
+     -Reason: red color is overridden because element selectors have the lowest weight.
+
+     2nd (medium priority): the class selector (.summit-class)- specificity (0,1,0)
+     -green color overrides the element selectors, although it gets overriden by ID selectors.
+
+     3rd (highest priority): ID selector   
+     -The id selcetor rule wins and applies blue text and its specificity weight carries more than the element or class selectors regardless of position or source order in the stylesheet. */
+
+     h3 {
+       color: red;
+     }
+
+     .summit-class {
+      color:green;
+     }
+
+     #summit-exp {
+      color:blue;
+     }
+
+/* SPECIFICITY- USING ALL CLASSES 
+When all rules uses single class selectors with equal specificity (0,1, 0) the CSS style sheet uses source order as the break in between.
+use breaks (.exp-c) wins and turns text purple. Matching specificity levels makes the code easier to read, predict and maintain without relying on heavy selector weights. */
+
+.exp-a {
+  color:purple;
+}
+
+.exp-b {
+  color:#b22222;
+}
+
+.exp-c {
+  color: purple;
+}
+
+/* GROUP SELECTOR USING :WHERE ()
+REASON: using :where(h1, h2, h3, h4) will set specificity to (0,0,0).
+This prevents specificty conflicts and shows the override in the future in amuch more easier way compared to standard grouping headings. */
+:where(h1,h2,h3,h4) {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+
+
+      
